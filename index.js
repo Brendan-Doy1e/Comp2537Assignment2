@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
         `);
     } else {
         var string = `<h2>Hello, ` + req.session.name + `!</h2>`;
-        var members = `<form action='/members' method='get'><button>Go to Members Area ;)</button></form>`;
+        var members = `<form action='/members' method='get'><button>Onwards To Members Area</button></form>`;
         var signout = `<form action='/signout' method='get'><button>Sign Out</button></form>`;
         var html = string + members + signout;
         res.send(html);
@@ -130,7 +130,7 @@ app.get('/members', (req, res) => {
     var msg = "<h3>Hello, " + req.session.name + "! I hope you like golf!</h3>";
     var signout = "<form action='/signout' method='get'><button>Sign Out</button><br></form>";
     var id = Math.floor(Math.random() * 3) + 1;
-    var img = "<img src='/" + id + ".png'>";
+    var img = "<img src='/" + "golf" + id + ".jpg'>";
     var html = msg + `<br>` + img + signout;
     res.send(html);
 });
@@ -294,13 +294,13 @@ app.get('/golf/:id', (req,res) => {
     var golf = req.params.id;
 
     if (golf == 1) {
-        res.send("golf 1: <img src='/golf1.jpg'>");
+        res.send("golf 1: <img src='/golf1.jpg' style='width:500px;'>");
     }
     else if (golf == 2) {
-        res.send("golf 2: <img src='/golf2.jpg'>");
+        res.send("golf 2: <img src='/golf2.jpg' style='width:500px;'>");
     }
     else if (golf == 3) {
-        res.send("golf 3: <img src='/golf3.jpg'>");
+        res.send("golf 3: <img src='/golf3.jpg' style='width:500px;'>");
     }
     else {
         res.send("Invalid golf id: "+ golf);
