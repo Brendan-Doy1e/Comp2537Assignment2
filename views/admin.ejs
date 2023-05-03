@@ -1,0 +1,13 @@
+<%- include("templates/header") %>
+<div class="container">
+    <div>Users:</div>
+    <div class="row">
+        <ul class="list-unstyled">
+            <% let i=0; %>
+            <% for(i=0; i < users.length; i++) { %>
+                <%- include('templates/user', {user: users[i]})  %>
+            <% } %> 
+        </ul>
+    </div>
+</div>
+<%- include("templates/footer") %>

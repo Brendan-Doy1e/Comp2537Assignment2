@@ -1,0 +1,15 @@
+<%- include("templates/header") %> 
+<h3>Welcome, <%= name %>! I hope you like golf!</h3>
+<% if (id == 1) { %>
+    <img src='/golf1.jpg' style='width:500px;'>
+<% } else if (id == 2) { %>
+    <img src='/golf2.jpg' style='width:500px;'>
+<% } else if (id == 3) { %>
+    <img src='/golf3.jpg' style='width:500px;'>
+<% } else { %>
+    Invalid golf id: <%= id %>
+<% } %>
+<form action='/signout' method='get'>
+    <button>Sign Out</button>
+</form>
+<%- include("templates/footer") %>
